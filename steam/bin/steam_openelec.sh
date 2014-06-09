@@ -255,6 +255,7 @@ reset_steam() {
 
 	# Scary!
 	rm -rf "$STEAMROOT/"*
+	rm $STEAMCONFIG/steam.pid
 
 	# Move things back into place
 	mv -f "$STEAM_SAVE/"* "$STEAMROOT/"
@@ -312,6 +313,8 @@ start_steam() {
   if [ "$DEBUGGER" ]; then
     ARGSFILE=$(mktemp /var/tmp/steam.gdb.XXXXXX)
     gdb -x "$ARGSFILE" --args $ADDON_DIR/.local/share/Steam/ubuntu12_32/steam $LAUNCH_OPTIONS
+  elif [ "$INITIAL_LAUNCH" ]; then
+    exec $STEAMROOT/ubuntu12_32/steam -windowed
   else
     exec $ADDON_DIR/.local/share/Steam/ubuntu12_32/steam $LAUNCH_OPTIONS
   fi
