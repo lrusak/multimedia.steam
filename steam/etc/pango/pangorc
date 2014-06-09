@@ -1,0 +1,6 @@
+[Pango]
+ModuleFiles = /storage/.xbmc/addons/multimedia.steam/etc/pango/pango.modules
+ModulesPath = /storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/
+
+[PangoX]
+AliasFiles = /storage/.xbmc/addons/multimedia.steam/etc/pango/pangox.aliases

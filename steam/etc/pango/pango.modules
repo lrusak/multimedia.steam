@@ -1,0 +1,17 @@
+# Pango Modules file
+# Automatically generated file, do not edit
+#
+# ModulesPath = /storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/
+#
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-arabic-lang.so ArabicScriptEngineLang PangoEngineLang PangoRenderNone arabic:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so BasicScriptEngineFc PangoEngineShape PangoRenderFc common:
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so devaIndicScriptEngineLang PangoEngineLang PangoRenderNone devanagari:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so bengIndicScriptEngineLang PangoEngineLang PangoRenderNone bengali:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so guruIndicScriptEngineLang PangoEngineLang PangoRenderNone gurmukhi:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so gujrIndicScriptEngineLang PangoEngineLang PangoRenderNone gujarati:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so oryaIndicScriptEngineLang PangoEngineLang PangoRenderNone oriya:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so tamlIndicScriptEngineLang PangoEngineLang PangoRenderNone tamil:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so teluIndicScriptEngineLang PangoEngineLang PangoRenderNone telugu:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so kndaIndicScriptEngineLang PangoEngineLang PangoRenderNone kannada:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so mlymIndicScriptEngineLang PangoEngineLang PangoRenderNone malayalam:*
+/storage/.xbmc/addons/multimedia.steam/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/pango/1.6.0/modules/pango-indic-lang.so sinhIndicScriptEngineLang PangoEngineLang PangoRenderNone sinhala:*
