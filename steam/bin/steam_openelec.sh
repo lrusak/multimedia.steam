@@ -117,20 +117,6 @@ if [ ! -z "`cat $ADDON_DATA_DIR/settings.xml | grep eventlircd_stop | grep true`
   EVENTLIRCD_STOP="true"
 fi
 
-OUTPUT="`xrandr | grep -w "connected" | awk '{print $1}'`"
-CURRENT_RES="`xrandr | grep -w "connected" | awk '{print $3}' | awk -F'+' '{print $1}'`"
-STEAM_RES="`cat $STEAMROOT/config/config.vdf | grep "VerticalRes" | grep -o '[0-9]*'`"
-
-if [ ! "$INITIAL_LAUNCH" ]; then
-  if [ "`echo $CURRENT_RES | awk -F'x' '{print $2}'`" != "$STEAM_RES" ]; then
-    if [ "1080" = "$STEAM_RES" ]; then
-      xrandr --output "$OUTPUT" --mode "1920x1080"
-    elif [ "720" = "$STEAM_RES" ]; then
-      xrandr --output "$OUTPUT" --mode "1280x720"
-    fi
-  fi
-fi
-
 # asound.conf needs a dmix option to use bigpicture mode
 export SDL_AUDIODRIVER="alsa"
 
@@ -362,12 +348,6 @@ if [ "$STATUS" -eq "$MAGIC_RESTART_EXITCODE" ] ; then
   exec "$0" "$@"
 fi
 
-if [ ! "$INITIAL_LAUNCH" ]; then
-  if [ "`echo $CURRENT_RES | awk -F'x' '{print $2}'`" != "$STEAM_RES" ]; then
-    xrandr --output "$OUTPUT" --mode "$CURRENT_RES"
-  fi
-fi
-    
 # Restore file permissions
 chmod 777 -R "$ADDON_DIR"
 
