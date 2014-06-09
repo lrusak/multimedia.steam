@@ -103,8 +103,8 @@ fi
 # Link backups folder to steam backup folder.
 ln -s "$ADDON_DIR/.local/share/Steam/Backups" "$ADDON_DATA_DIR/Backups"
 
-if [ ! -f "$HOME_DIR/settings.xml" ]; then
-  cp "$ADDON_DIR/resources/settings.xml" "$HOME_DIR/"
+if [ ! -f "$ADDON_DATA_DIR/settings.xml" ]; then
+  cp "$ADDON_DIR/resources/settings.xml" $ADDON_DATA_DIR/
 fi
 
 # Check settings
@@ -196,6 +196,8 @@ unpack_runtime()
 		return 0
 	fi
 
+	touch $STEAMCONFIG/steam_installing
+
 	# Unpack the runtime
 	EXTRACT_TMP="$STEAM_RUNTIME.tmp"
 	rm -rf "$EXTRACT_TMP"
@@ -255,7 +257,6 @@ reset_steam() {
 
 	# Scary!
 	rm -rf "$STEAMROOT/"*
-	rm $STEAMCONFIG/steam.pid
 
 	# Move things back into place
 	mv -f "$STEAM_SAVE/"* "$STEAMROOT/"
@@ -269,6 +270,8 @@ reset_steam() {
 }
 
 start_steam() {
+  rm $STEAMCONFIG/steam_installing
+
   # Unpack the runtime if necessary
   if unpack_runtime; then
     case $(uname -m) in
@@ -280,7 +283,6 @@ start_steam() {
       ;;
     esac
     export LD_LIBRARY_PATH="$STEAM_RUNTIME/i386/lib/i386-linux-gnu:$STEAM_RUNTIME/i386/lib:$STEAM_RUNTIME/i386/usr/lib/i386-linux-gnu:$STEAM_RUNTIME/i386/usr/lib:$STEAM_RUNTIME/amd64/lib/x86_64-linux-gnu:$STEAM_RUNTIME/amd64/lib:$STEAM_RUNTIME/amd64/usr/lib/x86_64-linux-gnu:$STEAM_RUNTIME/amd64/usr/lib:$LD_LIBRARY_PATH"
-
   fi
     
   ulimit -n 2048 2>/dev/null
@@ -313,7 +315,7 @@ start_steam() {
   if [ "$DEBUGGER" ]; then
     ARGSFILE=$(mktemp /var/tmp/steam.gdb.XXXXXX)
     gdb -x "$ARGSFILE" --args $ADDON_DIR/.local/share/Steam/ubuntu12_32/steam $LAUNCH_OPTIONS
-  elif [ "$INITIAL_LAUNCH" ]; then
+  elif [ -f "$STEAMCONFIG/steam_installing" ]; then
     exec $STEAMROOT/ubuntu12_32/steam -windowed
   else
     exec $ADDON_DIR/.local/share/Steam/ubuntu12_32/steam $LAUNCH_OPTIONS

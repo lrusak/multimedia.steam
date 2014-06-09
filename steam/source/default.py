@@ -53,12 +53,13 @@ def startSteam():
       p = subprocess.Popen(__launch__ + '/steam_openelec.sh bigpicture', shell=True)
     else:
       p = subprocess.Popen(__launch__ + '/steam_openelec.sh windowed', shell=True)
+    p.wait()
   else:
      if sys.argv[1] == 'reset':
-       if xbmcgui.Dialog().yesno("Are you sure you want to reset Steam?", "Your games will not be removed", "This may take some time", "Steam will launch automatically when finished"): 
+       if xbmcgui.Dialog().yesno("Are you sure you want to reset Steam?", "Your games will not be removed", "This may take some time", "A notification will appear when it has finished"): 
          p = subprocess.Popen(__launch__ + '/steam_openelec.sh reset', shell=True)
-
-  p.wait()
+         p.wait()
+         xbmcgui.Dialog().notification('Steam', 'Steam has finished reseting', xbmcgui.NOTIFICATION_INFO, 5000)
 
 def resumeXbmc():
   xbmc.audioResume()
