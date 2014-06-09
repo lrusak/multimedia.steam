@@ -6,5 +6,5 @@
         <string id="32013">Stop Eventlircd upon launch</string>
         <string id="32014">Enable SteamOS Mode</string>
         <string id="32003">Reset Steam</string>
-        <string id="32033">Reset Steam install folder (keeps game files)</string>
+        <string id="32033">Reset Steam (games will not be removed)</string>
 </strings>

@@ -7,6 +7,6 @@
         <setting label="32013" type="bool" id="eventlircd_stop" default="true"/>
     </category>
     <category label="32003">
-        <setting label="32033" type="action" action="RunScript(/storage/.xbmc/addons/multimedia.steam/default.py,reset)"/>
+        <setting label="32033" type="action" action="RunScript(multimedia.steam,reset)"/>
     </category>
 </settings>

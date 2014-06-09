@@ -55,7 +55,7 @@ def startSteam():
       p = subprocess.Popen(__launch__ + '/steam_openelec.sh windowed', shell=True)
   else:
      if sys.argv[1] == 'reset':
-       if xbmcgui.Dialog().yesno("Steam", "Are you sure you want to reset Steam?", "Your games library will not be touched", "Start Steam normally after"): 
+       if xbmcgui.Dialog().yesno("Steam", "Are you sure you want to reset Steam?", "Your games will not be removed", "Launch Steam again after reseting"): 
          p = subprocess.Popen(__launch__ + '/steam_openelec.sh reset', shell=True)
 
   p.wait()
